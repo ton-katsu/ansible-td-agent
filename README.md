@@ -24,7 +24,7 @@ You can also pass in a list of plugins to be installed using tg-agent-gem as fol
     - 'fluent-plugin-secure-forward'
     - 'fluent-plugin-...'
 
-Detail for [the official intallation page](http://docs.fluentd.org/articles/install-by-deb)
+Detail for [the official installation page](http://docs.fluentd.org/articles/install-by-deb)
 
 ## Examples
 

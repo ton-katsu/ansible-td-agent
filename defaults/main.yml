@@ -6,3 +6,4 @@ td_agent_version: ''
 td_agent_plugins: []
 td_agent_running_user: ''
 td_agent_running_group: ''
+td_agent_conf_copy: ''
