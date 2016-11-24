@@ -18,9 +18,9 @@
 
 - name: copy new "td-agent.conf" verbatim from main playbook's
   copy:
-    src:  "{{ playbook_dir }}/{{ tdagent_conf_copy }}"
+    src:  "{{ playbook_dir }}/{{ td_agent_conf_copy }}"
     dest: /etc/td-agent/td-agent.conf
     owner: td-agent
     group: td-agent
-  when: tdagent_conf_copy
+  when: td_agent_conf_copy
   notify: restart td-agent
