@@ -22,5 +22,5 @@
     dest: /etc/td-agent/td-agent.conf
     owner: td-agent
     group: td-agent
-  when: td_agent_conf_copy
   notify: restart td-agent
+  when: td_agent_conf_copy
