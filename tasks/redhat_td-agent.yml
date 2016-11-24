@@ -1,9 +1,12 @@
 ---
-
 - name: Add rpm repository
   copy: src=td.repo dest=/etc/yum.repos.d/td.repo
 
 - name: yum install td-agent
   yum: name=td-agent state=latest
-  notify:
-    - restart td-agent
+  notify: restart td-agent
+
+- name: Change user to run td-agent.
+  templates: src=td-agent.j2 dest=/etc/sysconfig/td-agent
+  when: td_agent_running_user and td_agent_running_group
+  notify: restart td-agent
