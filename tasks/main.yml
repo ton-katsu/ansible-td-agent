@@ -23,4 +23,14 @@
     owner: td-agent
     group: td-agent
   notify: restart td-agent
-  when: td_agent_conf_copy
+  when: td_agent_conf_copy is defined
+
+# Copy Template
+- name: copy new "td-agent.conf" verbatim from main playbook template.
+  template:
+    src:  "{{ playbook_dir }}/{{ td_agent_conf_copy_template }}"
+    dest: /etc/td-agent/td-agent.conf
+    owner: td-agent
+    group: td-agent
+  notify: restart td-agent
+  when: td_agent_conf_copy_template is defined
